@@ -140,7 +140,7 @@ abstract class AbstractPage {
         } else if (BrowserName.contains("chrome")) {
             BrowserName = "CHROME";
         } else {
-            BrowserName = "HTMLUNIT DRIVER";
+            BrowserName = "";
         }
         return BrowserName;
     }

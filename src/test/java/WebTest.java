@@ -61,6 +61,7 @@ public class WebTest extends AbstractPage {
 
             driver = new ChromeDriver(ops);
             wait = new WebDriverWait(driver, 15);
+
         } else if (browserName.equalsIgnoreCase("firefox")) {
             System.setProperty("webdriver.gecko.driver", firefoxDriver.getAbsolutePath());
             System.setProperty("webdriver.firefox.bin", "C:\\Users\\user\\AppData\\Local\\Mozilla Firefox\\firefox.exe");
@@ -72,9 +73,9 @@ public class WebTest extends AbstractPage {
 
             driver = new FirefoxDriver(fos);
             wait = new WebDriverWait(driver, 15);
+
         } else if (browserName.equalsIgnoreCase("internet explorer")) {
             System.setProperty("webdriver.ie.driver", ieDriver.getAbsolutePath());
-
             InternetExplorerOptions options = new InternetExplorerOptions();
             options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
             //options.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);

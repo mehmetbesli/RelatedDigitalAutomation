@@ -9,7 +9,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -126,5 +130,18 @@ abstract class AbstractPage {
             salt.append(randomSumberString.charAt(index));
         }
         return salt.toString();
+    }
+
+    public String getBrowserName(String BrowserName) {
+        if (BrowserName.contains("ie")) {
+            BrowserName = "INTERNET EXPLORER";
+        } else if (BrowserName.contains("firefox")) {
+            BrowserName = "FIREFOX";
+        } else if (BrowserName.contains("chrome")) {
+            BrowserName = "CHROME";
+        } else {
+            BrowserName = "HTMLUNIT DRIVER";
+        }
+        return BrowserName;
     }
 }

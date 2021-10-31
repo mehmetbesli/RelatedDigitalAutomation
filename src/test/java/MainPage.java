@@ -23,9 +23,12 @@ public class MainPage extends AbstractPage {
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         System.out.println("Web application launched");
 
+        String currentUrl = driver.getCurrentUrl();
         if (driver.getCurrentUrl().contains("euromsgexpress")) {
+            System.out.println(currentUrl+": Opened");
             test.log(LogStatus.PASS, "Navigated to the specified URL");
         } else {
+            System.out.println(currentUrl+": Could not open");
             test.log(LogStatus.FAIL, "Could not navigate navigate to the specified URL");
             Assert.assertTrue(false);
         }
